@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "driverId": "PAR-101",
+        "startName": "Place de Clichy",
+        "endName": "La Défense",
+        "etaMin": 18,
+        "price": 4.2,
+        "rating": 4.8
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [2.327, 48.883],
+          [2.300, 48.886],
+          [2.282, 48.888],
+          [2.252, 48.892]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "driverId": "PAR-102",
+        "startName": "Anvers",
+        "endName": "Gare de Lyon",
+        "etaMin": 22,
+        "price": 3.9,
+        "rating": 4.7
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [2.345, 48.883],
+          [2.354, 48.876],
+          [2.362, 48.870],
+          [2.373, 48.844]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "driverId": "PAR-103",
+        "startName": "Jules Joffrin",
+        "endName": "Bercy",
+        "etaMin": 26,
+        "price": 3.6,
+        "rating": 4.6
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [2.344, 48.893],
+          [2.349, 48.884],
+          [2.360, 48.870],
+          [2.386, 48.835]
+        ]
+      }
+    }
+  ]
+}

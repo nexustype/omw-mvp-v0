@@ -1,0 +1,92 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  /* keep UI light so the map colours stay normal */
+  color-scheme: light;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000;      /* behind everything = black */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #000;            /* no grey strip at top/bottom */
+  overscroll-behavior-y: none; /* avoid rubber-band pulling gap */
+}
+
+/* ------ Glass Rider/Driver toggle ------ */
+.glass-toggle {
+  position: absolute;
+  top: 606px;
+  left: 56px;
+  width: 180px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  box-sizing: border-box;
+
+  /* glassmorphism */
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  user-select: none;
+}
+
+.glass-toggle__knob {
+  position: absolute;
+  top: 2px;
+  width: 86px;
+  height: 36px;
+  border-radius: 999px;
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+  background: radial-gradient(120% 100% at 50% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0.55));
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.glass-toggle__knob.left  { transform: translateX(4px); }
+.glass-toggle__knob.right { transform: translateX(90px); }
+
+.glass-toggle__label {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: rgba(0,0,0,0.6);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  transition: color 150ms ease, opacity 150ms ease;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.glass-toggle__label.active {
+  color: rgba(0,0,0,0.9);
+  opacity: 1;
+}
+
+/* Dark map underneath? boost contrast a touch */
+@media (prefers-color-scheme: dark) {
+  .glass-toggle {
+    background: rgba(30, 30, 30, 0.35);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  .glass-toggle__label { color: rgba(255,255,255,0.8); }
+  .glass-toggle__label.active { color: #fff; }
+}
